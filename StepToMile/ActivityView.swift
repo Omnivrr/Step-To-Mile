@@ -22,6 +22,13 @@ struct ActivityView: View {
                 Text("Completion count: \(activity.completionCount)")
                 
                 Button("Mark Completed") {
+                    var newActiviity = activity
+                    newActiviity.completionCount += 1
+                    
+                    if let index = data.activities.firstIndex(of: activity) {
+                        data.activities[index] = newActiviity
+                        
+                    }
                     
                 }
             }
